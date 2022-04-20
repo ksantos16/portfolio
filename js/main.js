@@ -6,6 +6,10 @@ const links = [
         title: 'Week One',
         label: 'Week 1 Notes',
         url: 'https://ksantos16.github.io/portfolio/week1/index.html'
+    }, {
+        title: 'Week Two',
+        label: 'Week 2 Notes',
+        url: 'https://ksantos16.github.io/portfolio/week2/index.html'
     }
 ]
 
