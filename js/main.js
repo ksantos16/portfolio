@@ -5,7 +5,7 @@ const links = [
     {
         title: 'Week 1',
         label: 'Week1 notes',
-        url: 'week1/index.html'
+        url: 'https://ksantos16.github.io/portfolio/week1/index.html'
     }
 ]
 
