@@ -3,8 +3,8 @@ let index = document.querySelector('.index');
 
 const links = [
     {
-        title: 'Week 1',
-        label: 'Week1 notes',
+        title: 'Week One',
+        label: 'Week 1 Notes',
         url: 'https://ksantos16.github.io/portfolio/week1/index.html'
     }
 ]
