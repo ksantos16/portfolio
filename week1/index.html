@@ -12,10 +12,63 @@
     <h2>Week One</h2>
 
     <section>
+        <h3>Local Storage</h3>
         <p>
-
+            Section tag fill the the screen all the way across<br>
+            localStorage uses key-value pairs<br>
+            Example of a key-value pair would be name of a person and the value would be thier adress and phone
+            number.<br>
         </p>
     </section>
+    <h3>Example from Doing Stuff With Web Things..</h3>
+    <h4>Story Editor</h4>
+    Story Name:<input id="name_input"></input>
+    <section>
+        <button onclick="loadStory()">Find or Edit</button>
+        <button onclick="saveStory()">Save Story</button>
+        <button onclick="displayStory()">Display Story</button>
+    </section>
+    <textarea id="story_editor" placeholder="Write a totally awesome story here."></textarea>
+    <section id="story_display"></section>
+    <section>
+
+        <h3>Question(s)</h3>
+        <p>
+            Why are the function names being used in the onclick?
+        <p>Answer: The onclick event executes a certain functionality when a button is clicked. Meaning onclick needs a
+            function in order to work. This is done by placing the JavaScript function you want to execute inside the
+            opening tag of the button. This link gives detail information and example for onclick and gives example for
+            eventListener, https://www.freecodecamp.org/news/html-button-onclick-javascript-click-event-tutorial/
+        </p>
+
+
+        </p>
+        <h3>UX Experience</h3>
+        <p>
+            Speed Matters:<br>
+            Reduce image usage throughout site/apps<br>
+            Use SVG/Webfonts, lower in bandwidth<br>
+            Optimize and minify CSS and JS files<br>
+            GZIP files to eliminate unnecessary data<br>
+            <br>
+            Menu button on the bottom on mobile for easy of use.<br>
+            <br>
+            Use float labels for forms<br>
+            If breaking a form into mobile and form still needs to be long, use sections and use a progress
+            indicator<br>
+            Enable auto form<br>
+            Use auto advance for forms like CC information<br>
+            Default keyboards<br>
+            Link phone numbers, so user can just tap<br>
+
+            <br>
+        </p>
+    </section>
+
+    <p><span id="date"></span></p>
+
+
+    <script src="js/script.js"></script>
 </body>
 
 </html>

@@ -26,7 +26,7 @@ links.forEach(link => {
 
     title.textContent = link.title;
     label.textContent = link.label;
-    url.textContent = link.url;
+    url.innerHTML = `<a href="${link.url}">${link.url}</a>`;
 
     section.appendChild(title);
     section.appendChild(label);
@@ -35,4 +35,5 @@ links.forEach(link => {
     index.append(section);
 
 });
+
 
