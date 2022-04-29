@@ -32,7 +32,7 @@ function saveStory() {
     let storyName = document.getElementById('name_input').value
     let storyHTML = document.getElementById('story_editor').value
     // line below stores the story. In "English" it says, "Hey localStorage, store whats in the 'storyHTML 
-    // variable/box and label the stored piece of information with what you find on the storyName variabke/box."
+    // variable/box and label the stored piece of information with what you find on the storyName variable/box."
     localStorage.setItem(storyName, storyHTML)
 }
 

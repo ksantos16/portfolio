@@ -12,7 +12,182 @@
     <h2>Week Two</h2>
 
     <section>
+        <h3>Programming Basics</h3>
         <p>
+        <h4>Comments</h4>
+        <strong>Notes:</strong>
+        Multi-line comments start with /* and finish with */:
+        <br>
+        <h4>Block</h4>
+        <strong>Notes:</strong>
+        A block is a series of statements that are collected together inside curly braces
+        <br>
+        Blocks do not need to be terminated by a semicolon at the end.
+        <br>
+        <strong>Example:</strong>
+        <br>
+        Hello alert message that appear when the page is open
+        <span class="blockStatement"></span>
+
+        <h4>Data Types</h4>
+        <strong>Notes:</strong>
+        JavaScript has seven different data types.
+        <br>
+        Any value that is not one of the primitive data types listed above is an <strong>object</strong>.
+        <br>
+        <br>
+        Six of them are primitive data types and
+        are listed below:
+
+        <li>String</li>
+        <li>Symbol</li>
+        <li>Number</li>
+        <li>Boolean</li>
+        <li>Undefined</li>
+        <li>Null</li>
+
+        <h4>Operator</h4>
+        <strong>Notes:</strong>
+        JavaScript has a special operator called <strong>typeof</strong>, for finding out the type of a value.<br>
+        <strong>Example:</strong>
+        <p class="typesOfOperators"></p>
+
+        <h4>Variables</h4>
+        <strong>Notes:</strong>
+        If the variable references a non-primitive data type, such as an array, function or
+        object, then using const will not make it immutable. This means the underlying
+        data inside the object can change (known as mutating the object). We can see this
+        in the example below:<br><br>
+        const name = { value: 'Alexa' }; // an object
+        <br><br>
+        Any variable declared outside of a block is said to have global scope.<bR>
+        If let or const are not used, the variable will have global scope
+
+        <h4>Methods </h4>
+        <strong>Notes:</strong><br>
+        Write a string in all capital letters using the toUpperCase() method: <br>
+        <span class="upper"></span>
+        <br>
+        The toLowerCase() method, which will write my name in all lower-case letters:<br>
+        <span class="lower"></span>
+        <br>
+        To know which character is at a certain position, you can use the charAt() method: <br>
+        <span class="position"></span>
+        <br>
+        (This tells us that the character ‘l’ in Alexa is at position 1.).
+        <br><br>
+        To find where a certain character or substring appears in a string, we can use the indexOf() method: <br>
+        <span class="index1"></span>
+        <br>
+        <span class="index2"></span>
+        <br>
+        If a character doesn’t appear in the string, -1 will be returned: <br>
+        <br>
+        Want the last occurrence of a character or substring, we can use the lastIndexOf() method:
+        <br>
+        <span class="last"></span>
+        <br>
+        Want to know if a string contains a certain character, we can use the includes() method:
+        <br>
+        <span class="includes1"></span>
+        <br>
+        <span class="includes2"></span>
+        <br>
+        A couple of methods to check if a string starts or ends in a particular character. To check if a string
+        starts with a certain character, we can use the startsWith() method.
+        <br>
+        <span class="starts1"></span>
+        <br>
+        <span class="starts2"></span>
+        <br>
+        (note: Be careful though, its case-sensitive)
+        <br>
+        And we can use the similar endsWith() method to check if a string ends with a particular character:<br>
+        <span class="ends1"></span>
+        <br>
+        <span class="ends2"></span>
+        <br>
+        The concat() method can be used to concatenate two or more strings together:
+        <br>
+        <span class="concat1"></span>
+        <br>
+        <span class="concat2"></span>
+        <br>
+        A shortcut for string concatenation is to use the + operator to add the two strings together:
+        <br>
+        <span class="concat3"></span>
+        <br>
+        The trim() method will remove any whitespace from the beginning and end of a string:
+        <br>
+        <span class="trim1"></span>
+        <br>
+        <span class="trim2"></span>
+        <br>
+        The repeat() method that will repeat a string the stated number of times: <br>
+        <span class="repeat"></span>
+
+
+        <h4>Template Literals</h4>
+        <strong>Notes:</strong>
+        Use (\n): to make a line break
+
+        <h4>Symbols</h4>
+        Ex.<br>
+        const uniqueID = Symbol('this is a unique ID');<br><br>
+        The main use-case for symbols is as object property keys
+        <br>
+
+        <h4>Numbers</h4>
+        The toFixed() method rounds a number to a fixed number of decimal places:<br>
+        The toPrecision() method rounds a number to a fixed number of significant figures<br>
+
+        <h4>Logic Operator</h4>
+        !(Logic Not)
+        !!(find out if a value it truthy or falsy)
+        <br>
+        && (Logic And)
+        <br>
+        ||(Logic Or)
+        </p>
+    </section>
+
+    <section>
+        <h4>Array</h4>
+        <p>The shift() method works in a similar way to the pop() method, but this
+            removes the first item in the array and the unshift() method is similar to the push() method, but this
+            appends a new item to the beginning of the array:
+        </p>
+        <p>
+            Examples:
+            <span class="array"></span>
+            <br>
+            <span class="array2"></span>
+        </p>
+
+    </section>
+
+    <section>
+        <h4>Sets</h4>
+        <p>
+            <strong>Notes:</strong>
+            A set is a data structure that
+            represents a collection of unique values, so it cannot include any duplicate
+            values.
+        </p>
+    </section>
+
+    <section>
+        <h4>Maps</h4>
+        <p>
+            <strong>Notes:</strong>
+            Maps a convenient way of keeping a list of key and value pairs, and are similar to
+            “hashes”, or“hash tables” or “dictionaries” in other programming languages.
+            <br>
+            Maps can use any data type as a key.
+            <br>
+            The value of an object’s properties can be accessed directly, whereas maps restrict you to using the get()
+            method to retrieve any values.
+
 
         </p>
     </section>
