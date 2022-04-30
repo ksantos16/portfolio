@@ -192,6 +192,110 @@
         </p>
     </section>
 
+    <section>
+        <h4>Logic</h4>
+        <p>
+            <strong>Notes:</strong>
+            A shorthand way of writing an if ... else statement is to use the ternary
+            operator, ?
+            <br>
+            condition ? (//code to run if condition is true) : (//code
+            ➥ to run if condition is false)
+            <br>
+            The switch operator can be used to make your code easier to follow when there
+            are lots of conditions to test. The value you are comparing goes in parentheses after the switch operator. A
+            case keyword is then used for each possible value that can occur.
+            After each case statement is the code that that needs to be run if that case occurs.
+            It is important to finish each case block with the <strong>break</strong> keyword, as this stops
+            any more of the case blocks being executed. Without a break statement, the
+            program will "fall through" and continue to evaluate subsequent case blocks. This
+            is sometimes implemented on purpose, but it is a hack and can be confusing. For
+            this reason it should be avoided. The default keyword is used at the end for any code than needs to be run
+            if none of the cases are true.
+            <br>
+            A do ... while loop is similar to a while loop. The only difference is that the
+            condition comes after the block of code.
+            <br>
+        </p>
+    </section>
+    <section>
+        <h4>For Loops</h4>
+        <p>
+            <br>
+            <strong>Notes:</strong>
+            for (initialization ; condition ; after) { do something }
+            <br>
+            The initialization code is run before the loop starts and is usually employed to
+            initialize any variables used in the loop. The condition has to be satisfied for the
+            loop to continue. The after code is what to do after each iteration of the loop, and
+            it is typically used to increment a counter of some sort.
+            <br>
+            A for loop is considered clearer, as all the
+            details of the loop (the initialization, condition and increment) are shown in one
+            place and kept out of the actual code block.
+            <br>
+            You can place a loop inside another loop to create a nested loop. It will have an
+            inner loop that will run all the way through before the next step of the outer loop
+            occurs
+            <br>
+        </p>
+        <h4>Looping over Arrays</h4>
+        <p><strong>Notes:</strong>
+            Array indices start their numbering at zero, so make sure the value of the initial counter in the for loop
+            also starts at zero.
+            <br>
+            ES6 introduced an improved iterator function for arrays called a for-of loop that
+            uses a slightly different syntax: This replaces all of the setup of a ‘for’ loop with a variable
+            Fthat represents the value of each element in the array. Note that this
+            variable needs to be declared using const.
+        </p>
+    </section>
+
+    <section>
+        <h4>Functions</h4>
+        <p>
+            <strong>Notes:</strong>
+            functions are considered to be first-class objects. This means they
+            behave in the same way as all the other primitive data types and objects in the
+            language. They can be be assigned to variables, stored in arrays and can even be
+            returned by another functions.
+            <br>
+            Every function has a special variable called <strong>arguments</strong> This is an array-like
+            object that contains every argument passed to the function when it is invoked. But, the problem is that
+            arguments is not an array
+            <br>
+            A much better option is to use the rest operator. This was introduced in ES6 and
+            can be used to deal with multiple arguments by creating an array of arguments
+            that are available inside the body of the function.
+            To use the rest operator, simply place three dots in front of the last parameter in a
+            function declaration. This will then collect all the arguments entered into an
+            array.
+            <br>
+            Default parameters should always come after non-default parameters, otherwise
+            default values will always have to be entered anyway.
+            <br>
+            The reduce() method is another method that iterates over each value in the
+            array, but this time it cumulatively combines each result to return just a single
+            value.
+            <br>
+            The reduce() method also takes a second parameter after the callback, which is
+            the initial value of the accumulator, acc
+        </p>
+    </section>
+
+    <section>
+        <h4>Arrow Functions</h4>
+        <p>
+            <strong>Notes:</strong>
+            Arrow functions can be identified by the arrow symbol, => that gives them their
+            name. <strong>The parameters come before the arrow and the main body of the function
+                comes after</strong>. Arrow functions are always anonymous, so if you want to refer to
+            them, you must assign them to a variable
+
+
+        </p>
+    </section>
+
     <p><span id="date"></span></p>
 
     <script src="js/script.js"></script>
