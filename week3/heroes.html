@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Justice League</title>
+</head>
+
+
+<body>
+    <header>
+        <h1 id='title'>Justice League</h1>
+    </header>
+    <ul id='roster'>
+        <li class='hero'>Superman</li>
+        <li class='vigilante hero' id='bats'>Batman</li>
+        <li class='hero'>Wonder Woman</li>
+    </ul>
+
+
+    <script>
+        const heroes = document.getElementById('roster');
+        const flash = document.createElement('li');
+        flash.textContent = 'Flash';
+
+        function createElement(tag, text) {
+            const el = document.createElement(tag);
+            el.textContent = text;
+            return el
+        }
+        const aquaman = createElement('li', 'Aquaman');
+
+        heroes.appendChild(flash);
+        heroes.insertBefore(aquaman, flash);
+
+        const h1 = document.getElementById('title');
+        const oldText = h1.firstChild;
+        const newText = document.createTextNode('Justice League of America');
+        h1.replaceChild(newText, oldText);
+
+    </script>
+</body>
+
+</html>

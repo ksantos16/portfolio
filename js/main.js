@@ -10,6 +10,10 @@ const links = [
         title: 'Week Two',
         label: 'Week 2 Notes',
         url: 'https://ksantos16.github.io/portfolio/week2/index.html'
+    }, {
+        title: 'Week Three',
+        label: 'Week 3 Notes',
+        url: 'https://ksantos16.github.io/portfolio/week3/index.html'
     }
 ]
 
