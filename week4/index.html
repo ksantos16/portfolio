@@ -6,23 +6,180 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Week Four Studies on: Forms, Object Oriented Programming, Modern JS</title>
+
+    <style>
+        .error {
+            background: #f99;
+            border: #900 1px solid;
+            display: none;
+        }
+    </style>
+
 </head>
 
 <body>
     <h2>Week Four</h2>
 
     <section>
-        <h3></h3>
+        <h3>FORMS</h3>
+
+        <h4>Notes:</h4>
+
+        <p>
+            Input element with a type attribute of image <br>
+            input type='image' src='button.png'
+        </p>
+        <p>
+            The form.action property can be used to set the action attribute of a form, so it’s
+            sent to a different URL to be processed on the server:<br>
+            form.action = '/an/other.url'
+        </p>
+
+        <form name='search' action='/search'>
+            <input name='searchInput'>
+            <button type='submit'>Search</button>
+        </form>
+    </section>
+
+
+    <section>
+        <h3> RETRIEVING & CHANGING VALUES FROM A FORMS</h3>
+
+        <h4>Notes:</h4>
+
+        <p>
+            Text input element objects have a value property that can be used to retrieve the
+            text inside the field.
+        </p>
+
+        <p>
+            We can use this to report back what the user has searched for. Edit the search()
+        </p>
+
+        <input type='text' name='search-box' placeholder='Search Here'>
+        <p>
+            placeholder text is not actually a value of the input field, so it won’t be submitted as the field’s value
+            if the user fails to fill it in
+        </p>
+
+    </section>
+
+    <section>
+        <h3>FORM CONTROLS</h3>
+
+        <h4>Notes:</h4>
+
+        <p>
+            The autofocus attribute give focus to this element when a page loads. It is the
+            equivalent to putting the following line of JavaScript in main.js:<br>
+            document.forms.hero.heroName.focus();
+        </p>
+        <p>
+            The maxlength attribute will limit the number of characters that can be entered in
+            the field to the value given (in this case 32).
+        </p>
+
+        <form id='hero'>
+            <label for='heroName'>Name:
+                <input type='text' id='heroName' name='heroName' autofocus placeholder='Your Super Hero Name'
+                    maxlength=32>
+            </label>
+
+            <label for='realName'>Real Name:
+                <input type='password' name='realName' id='realName'>
+            </label>
+
+            <button type='submit' id='submit' disabled>Submit</button>
+
+        </form>
+
+    </section>
+
+    <section>
+        <h3>INPUT FIELDS</h3>
+
+        <label for='donation-amount'>Enter amount to donate:
+            <input type='text' id='donation-amount' name='donationAmount' value='10'>
+        </label>
+    </section>
+
+    <section>
+        <h3>CHECKBOX INPUT FIELDS</h3>
+
+        <p>Super Powers:</p>
+        <label for='flight'>Flight:
+            <input type='checkbox' id='flight' value='Flight' name='powers'>
+        </label>
+        <label for='strength'>Super Strength:
+            <input type='checkbox' id='strength' value='Strength' name='powers'>
+        </label>
+        <label for='speed'>Super Speed:
+            <input type='checkbox' id='speed' value='Super Speed' name='powers'>
+        </label>
+        <label for='energy'>Energy Blasts:
+            <input type='checkbox' id='energy' value='Energy Blasts' name='powers'>
+        </label>
+        <label for='telekinesis'>Telekinesis:
+            <input type='checkbox' id='telekinesis' value='Telekinesis' name='powers'>
+        </label>
+    </section>
+
+    <section>
+        <h3>RADIO BUTTON</h3>
+        <p>What type of hero are you?</p>
+        <label for='hero'>Hero:
+            <input type='radio' name='category' value='Hero' id='hero'>
+        </label>
+        <label for='villain'>Villain:
+            <input type='radio' name='category' value='Villain' id='villain'>
+        </label>
+        <label for='anti-hero'>Anti-Hero:
+            <input type='radio' name='category' value='Antihero' id='anti-hero'>
+        </label>
+    </section>
+
+    <section>
+        <h3>OTHER INPUTS</h3>
+        <label for='age'>Age:
+            <input type='number' id='age' name='age' min=0 step=1></label>
+    </section>
+
+    <section>
+        <h3>DROP-DOWN INPUT</h3>
+        <label for='City'>Base of Operations:
+            <select name='city' id='city'>
+                <option value='' selected>Choose a City</option>
+                <option value='Metropolis'>Metropolis</option>
+                <option value='Gotham City'>Gotham City</option>
+                <option value='Keystone City'>Keystone City</option>
+                <option value='Coast City'>Coast City</option>
+                <option value='Star City'>Star City</option>
+            </select>
+        </label>
+    </section>
+
+    <section>
+        <h3>BUTTONS</h3>
+
+        <h4>Notes:</h4>
+
+        <p>
+            The other type is simply button. This doesn’t need to be inside a form element
+            and has no default behavior. It simply creates a clickable button that can have an
+            event listener attached to it:<br>
+            button type='button'>Click Me >button
+        </p>
+    </section>
+
+    <section>
+        <h3>Object-Oriented Programming</h3>
 
         <h4>Notes:</h4>
 
         <p>
 
         </p>
-
-        <span class=""></span>
     </section>
-
 
 
     <p><span id="date"></span></p>
