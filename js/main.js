@@ -5,7 +5,9 @@ const links = [
     {
         title: 'Week One',
         label: 'Week 1 Notes',
-        url: 'https://ksantos16.github.io/portfolio/week1/index.html'
+        url: 'https://ksantos16.github.io/portfolio/week1/index.html',
+        team: 'Team Assignment',
+        teamLink: 'None'
 
     }, {
         title: 'Week Two',
@@ -39,7 +41,7 @@ links.forEach(link => {
     let label = document.createElement('li');
     let url = document.createElement('li');
     let team = document.createElement('li');
-    let teamLink = document.createElement('li)');
+    let teamLink = document.createElement('li');
 
     title.textContent = link.title;
     label.textContent = link.label;
