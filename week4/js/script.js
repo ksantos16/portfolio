@@ -241,3 +241,132 @@ console.log(food);
 
 const eat = mike.eat();
 console.log(eat);
+
+
+//Getter / Setters
+
+const me = { name: 'DAZ' };
+
+me.age = 21;
+
+Object.getOwnPropertyDescriptor(me, 'name');
+
+// << { value: 'DAZ', writable: true, enumerable: true, configurable: true }
+
+Object.defineProperty(me, 'eyeColor', { value: 'blue', writable: false, enumerable: true });
+
+me.age = 21;
+me.retirementAge = 65;
+Object.defineProperty(me, 'yearsToRetirement', {
+    get() {
+        if (this.age > this.retirementAge) { return 0; }
+        else { return this.retirementAge - this.age; }
+    },
+    set(value) {
+        this.age = this.retirementAge - value;
+        return value;
+    }
+});
+
+
+Object.defineProperty(me, 'age', {
+    get() {
+        return 21;
+    },
+    set(value) {
+        return value;
+    }
+});
+
+
+
+//Creating Objects from Other Object
+
+const Human = {
+    arms: 2,
+    legs: 2,
+    walk() { console.log('Walking'); }
+}
+
+const lois = Object.create(Human);
+
+const newName = lois.name = 'Lois Lane';
+console.log(newName);
+
+const job = lois.job = 'Reporter';
+console.log(job);
+
+const jimmy = Object.create(Human, { name: { value: 'Jimmy Olsen', enumerable: true }, job: { value: 'Photographer', enumerable: true } });
+
+
+//Super-class
+
+const Superhuman = Object.create(Human);
+Superhuman.change = function () {
+    return `${this.realName} goes into a phone box and comes out as ${this.name}!`;
+};
+
+Superhuman.name = 'Name Needed';
+Superhuman.realName = 'Real Name Needed';
+
+const superman = Object.create(Superhuman);
+
+superman.name = 'Superman';
+
+superman.realName = 'Clark Kent';
+
+console.log(superman.change());//this works
+
+Superhuman.init = function (name, realName) {
+    this.name = name;
+    this.realName = realName;
+    this.init = undefined; // this line removes the init function, so it can only be called once
+    return this;
+}
+
+const batman = Object.create(Superhuman);
+batman.init('Batman', 'Bruce Wayne');
+console.log(batman.change());
+
+
+//example of chaining a technique
+const aquaman = Object.create(Superhuman).init('Aquaman', 'Arthur Curry');
+console.log(aquaman.change());
+
+
+//mix in
+
+const wonderWoman = Object.create(Superhuman);
+
+mixin(wonderWoman, { name: 'Wonder Woman', realName: 'Diana Prince' });
+
+
+console.log(wonderWoman.change());//not working
+
+
+//for-of
+
+superman.findFriends = function () {
+    for (const friend of this.friends) {
+        console.log(`${friend.name} is friends with ${this.name}`);
+    };
+}
+superman.findFriends();
+
+
+//jQuery
+
+$(para).addClass('important').append('<p>Another Paragraph</p>');
+
+//Templates
+
+const tasks = [
+    { name: 'Get Milk' },
+    { name: 'Go for a run' },
+    { name: 'Finish writing last chapter' },
+    { name: 'Phone bank' },
+    { name: 'Email Craig' }
+]
+
+//Packages
+NamedNodeMap

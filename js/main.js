@@ -26,7 +26,7 @@ const links = [
         label: 'Week 4 Notes',
         url: 'https://ksantos16.github.io/portfolio/week4/index.html',
         team: 'Team Assignment',
-        teamLink: 'https://ksantos16.github.io/portfolio/week2/team/'
+        teamLink: 'https://ksantos16.github.io/portfolio/week4/team/team4.html'
     }
 ]
 

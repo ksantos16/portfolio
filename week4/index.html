@@ -221,6 +221,11 @@
             We can use the constructor property to instantiate a copy of an object, without
             having to reference the actual constructor function or class declaration directly.
         </p>
+
+        <p>
+            We must use bracket notation when accessing keys that have numbers, spaces, or special characters in them.
+            Without bracket notation in these situations, our code would throw an error.
+        </p>
     </section>
 
     <section>
@@ -249,6 +254,254 @@
             prototype, any instances of its class will inherit the new properties and methods
             automatically, even if that instance has already been created.
         </p>
+    </section>
+
+    <section>
+        <h3>GETTING AND SETTING PROPERTY DESCRIPTORS</h3>
+
+        <h4>Notes:</h4>
+
+        <p>
+            Instead of using assignment, we can add properties to an object using the
+            Object.defineProperty() method. This provides more fine-grained control
+            when adding new properties, as it allows each attribute to be set. The first
+            argument is the object to which you want to add the property, followed by a
+            property descriptor containing the attributes you want to set.
+        </p>
+
+        <p>
+            These getter and setter methods allow much more fine-grained control over how
+            assignment works. It also means we can change the way assignment works, and
+            use the get() method to return anything we like, regardless of what value was set
+            using assignment.
+        </p>
+
+        <p>
+            The get and set property descriptors are particularly useful for controlling the
+            getting and setting of properties in classes.
+        </p>
+
+    </section>
+
+    <section>
+        <h3>CREATING OBJECTS FROM OTHER OBJECTS</h3>
+
+        <h4>Notes:</h4>
+
+        <p>
+            The Object() constructor function has a method called create that can be used
+            to create a new object that is an exact copy of the object that is provided as an
+            argument. The object that is provided as the argument acts as the prototype for
+            the new object.
+        </p>
+        <p>
+            The Object.create() will create a new object that inherits all the properties and methods being called in
+            the ()
+        </p>
+
+    </section>
+
+    <section>
+        <h3>OBJECT-BASED INHERITANCE</h3>
+
+        <h4>Notes:</h4>
+
+        <p>
+            The initial values are passed as an argument
+            to the constructor function. This can be fixed by adding a init() method
+        </p>
+
+    </section>
+
+    <section>
+        <h3>OBJECT PROTOTYPE CHAIN</h3>
+
+        <h4>Notes:</h4>
+
+        <p>
+            Every time a new object is created using the Object.create() method, the new
+            object inherits all the properties and methods from the parent object, which
+            becomes the new object’s prototype.
+        </p>
+
+    </section>
+
+    <section>
+        <h3>BINDINGS</h3>
+
+        <h4>Notes:</h4>
+
+        <p>
+            The value of this points to the object calling a method. It
+            allows us to create generalized methods that refer to properties specific to a
+            particular object. Be aware of a certain problem when a function is nested inside
+            another function, which can often happen when using methods in objects,
+            especially ones that accept callback functions. The problem is that the value of
+            this loses its scope, and points to the global object inside a nested function,
+        </p>
+
+        <p>
+            Use that = this: A common solution is to set the variable that to equal this before the nested
+            function, and refer to that in the nested function instead of this.
+        </p>
+
+        <p>
+            Use bind(this): The bind() method is a method for all functions and is used to set the value of
+            this in the function. If this is provided as an argument to bind() while it’s still
+            in scope, any reference to this inside the nested function will be bound to the
+            object calling the original method
+        </p>
+
+        <p>
+            Use the for-of: for arrays and this does not require a nested
+            function to be used
+        </p>
+    </section>
+
+    <section>
+        <h3>LIBRARIES</h3>
+
+        <h4>Notes:</h4>
+
+        <p>
+            Is a piece of code that provides several methods that make it
+            easier to achieve common tasks. A library will abstract functionality into easier-to-use
+            functions and methods. These can then be used to complete common tasks
+            without having to use lots of repetitive code.
+        </p>
+        <p>
+            jQuery: The jQuery library uses the $ symbol as a convenient alias for the the global
+            jQuery object that contains all of jQuery’s methods. This prevents the global scope
+            from being polluted with any of jQuery’s methods. The $ symbol has become
+            synonymous with jQuery, and you can confidently expect that any mention of it
+            implies that jQuery is being used.
+        </p>
+        <p>
+            Underscore & Lodash: using one of these libraries in your projects as it will give
+            you access to a large number of well-tested utility functions that are often
+            required in projects, and particularly geared towards a functional style of
+            programming
+        </p>
+    </section>
+
+    <section>
+        <h3>MODULAR JAVASCRIPT</h3>
+
+        <h4>Notes:</h4>
+
+        <p>
+            A module is a self-contained piece of code that provides functions and methods
+            that can then be used in other files and by other modules. This helps to keep code
+            organized in separate, reusable files, which improves code maintainability. The
+            code in a module should have a single purpose, and group together functions
+            with distinct functionality.
+        </p>
+
+        <p>
+            Coupling: The coupling of code refers to how dependent certain elements or modules of code
+            are on each other. Two pieces of code are said to be tightly coupled if one relies on
+            the other to run. This often occurs if a piece of code makes hard-coded references to
+            another piece of code, requiring it to be used. This will often mean that changes to
+            one piece of code will necessitate changes in the other.
+
+        </p>
+        <p>
+            There are a few important points about modules that are worth keeping in mind:
+            <li>
+                All code in modules is always in strict mode without the need for 'use
+                strict' and there is no way to opt out of this.
+            </li>
+            <li>
+                A module has its own global scope, so any variables created in the top-level of
+                a module can only be accessed within that module.
+            </li>
+            <li>
+                The value of this in the top level of a module is undefined, rather than the
+                global object.
+            </li>
+            <li>
+                You can’t use HTML-style comments in modules (although this isn’t very
+                common in any JavaScript program these days).
+            </li>
+        </p>
+        <p>
+            If there are lots of values and functions that need to be imported, then everything
+            in a module file can be imported using the wildcard symbol * along with a
+            namespace for the imported values and functions using the following notation:<br>
+            import * as stats from './stats.js';
+        </p>
+        <p>
+            Default exports refer to a single variable, function or class in a module that can be
+            imported without having to be explicitly named. The syntax for default exports is
+            purposely easier to read because this is how modules were designed to be used.
+        </p>
+        <p>
+            Don't Use More Than One Default Export
+            Having more than one default export will result in a syntax error.
+        </p>
+        <p>
+            With default exports is that you don’t need to use curly braces
+            or make any mention of the value that is being imported, making the statement
+            read more elegantly
+        </p>
+    </section>
+
+    <section>
+        <h3>MVC FRAMEWORK</h3>
+
+        <h4>Notes:</h4>
+
+        <p>
+            Model-View-Controller (MVC) is a design pattern that’s been used for a long time
+            in server-side languages. It’s a common way of designing software, and used by
+            server-side frameworks such as Ruby On Rails and Django. In recent years it has
+            been used in JavaScript code to make it easier to organize large-scale web
+            applications.
+        </p>
+
+        <li>
+            Models are objects that implement the functionality for creating, reading,
+            updating and deleting (known as CRUD tasks) specific pieces of information
+            about the application, as well as any other associated logic and behavior. In a
+            to-do list application, for example, there would be a task model providing
+            methods to access all the information about the tasks such as names, due dates
+            and completed tasks. This data will often be stored in a database or some
+            other container.
+        </li>
+
+        <li>
+            Views provide a visual representation of the model showing all the relevant
+            information. In a web application, this would be the HTML displayed on a
+            web page. Views also provide a way for users to interact with an application,
+            usually via forms. In a to-do list application, the views would display the
+            tasks as an HTML list with checkboxes that a user could tick to say a task had
+            been completed.
+        </li>
+
+        <li>
+            Controllers link models and views together by communicating between them.
+            They respond to events, which are usually inputs from a user (entering some
+            data into a form, for example), process the information, then update the model
+            and view accordingly. In a to-do list application, the controller functions
+            would respond to the event of a user clicking on a check box and then inform
+            the model that a task had been completed. The model would then update the
+            information about that task.
+        </li>
+    </section>
+
+    <section>
+        <h3>TEMPLATES</h3>
+
+        <h4>Notes:</h4>
+
+        <!-- Mustache -->
+        <ul>
+            {{#tasks}}
+            <li>{{name}}</li>
+            {{/task}}
+        </ul>
+
+
     </section>
 
 
