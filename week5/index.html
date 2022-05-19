@@ -6,27 +6,117 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Week Five Studies on: Testing and Debugging</title>
-
-    <style>
-        .error {
-            background: #f99;
-            border: #900 1px solid;
-            display: none;
-        }
-    </style>
-
 </head>
 
 <body>
     <h2>Week Five</h2>
 
     <section>
-        <h3>FORMS</h3>
+        <h3>Errors, Exceptions, and Warnings</h3>
 
         <h4>Notes:</h4>
 
         <p>
+            Errors: Programmer errors are our responsibility, so we must ensure
+            they are minimized as much as possible and fixed promptly. We also should try
+            to limit user errors by predicting any possible interactions that may throw an
+            error, and ensure they are dealt with in a way that doesn’t negatively affect the
+            user experience.
+        </p>
 
+        <p>
+            Exceptions: An exception is an error that produces a return value that can then be used by the
+            program to deal with the error.
+        </p>
+
+        <p>
+            Stack Traces: This is a sequence of functions or
+            method calls that lead to the point where the error occurred.
+        </p>
+
+        <p>
+            Warnings: A warning can occur if there’s an error in the code that isn’t enough to cause the
+            program to crash. This means the program will continue to run after a warning.
+        </p>
+
+    </section>
+
+    <section>
+        <h3>The Importance of Testing and Debugging</h3>
+
+        <h4>Notes:</h4>
+
+        <p>
+            The console.trace() method will log an interactive stack trace in the
+            console. This will show the functions that were called in the lead up to an
+            exception occurring while the code is running.
+        </p>
+
+        <p>Error Objects</p>
+        <ul>
+            <li>EvalError is not used in the current ECMAScript specification and only
+                retained for backwards compatibility. It was used to identify errors when
+                using the global eval() function.
+            </li>
+
+            <li>
+                RangeError is thrown when a number is outside an allowable range of values.
+            </li>
+
+            <li>
+                ReferenceError is thrown when a reference is made to an item that doesn’t
+                exist. For example, calling a function that hasn’t been defined.
+            </li>
+
+            <li>
+                SyntaxError is thrown when there’s an error in the code’s syntax.
+            </li>
+
+            <li>
+                TypeError is thrown when there’s an error in the type of value used; for
+                example, a string is used when a number is expected.
+            </li>
+
+            <li>
+                URIError is thrown when there’s a problem encoding or decoding the URI.
+            </li>
+
+            <li>
+                InternalError is a non-standard error that is thrown when an error occurs in
+                the JavaScript engine. A common cause of this is too much recursion.
+            </li>
+        </ul>
+
+        <p>
+            Throw your own exceptions using the throw statement. This will allow for any problems in your code to be
+            highlighted
+            and dealt with, rather than lurk quietly in the background.
+            The throw statement can be applied to any JavaScript expression, causing the
+            execution of the program to stop.
+        </p>
+
+    </section>
+
+    <section>
+        <h3>Tests</h3>
+
+        <h4>Notes:</h4>
+
+        <p>
+            Test-driven development(TDD)
+        </p>
+
+        <ol>
+            <li>Write tests (that initially fail)</li>
+            <li>Write code to pass the tests</li>
+            <li>Refactor the code</li>
+            <li>Test refactored code</li>
+            <li>Write more tests for new features</li>
+        </ol>
+
+        <p>
+            We have used the toEqual() match in this test. This is because we are testing an
+            array.
         </p>
 
     </section>
@@ -34,7 +124,7 @@
 
     <p><span id="date"></span></p>
 
-    <script src="js/main.js"></script>
+    <script src="main.js"></script>
 
 </body>
 
