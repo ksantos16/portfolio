@@ -14,15 +14,19 @@
     <h1>TO DO LIST:</h1>
     <ul id="toDoList"></ul>
     <span class="taskCount"></span>
-    <button id="allBtn" type="button" value="all">All</button>
-    <button id="activeBtn" type="button">Active</button>
-    <button id="completeBtn" type="button">Completed</button>
     <input id="todoinput" type="text" placeholder="Add Task">
     <button id="add" type="submit">+</button>
+    <div class="select">
+        <select name="todos" class="filtertodos">
+            <option value="all">ALL</option>
+            <option value="completed">COMPLETED</option>
+            <option value="open">OPEN</option>
+        </select>
+    </div>
 
 
 
-    <script src="./js/utilities2.js" type="module"></script>
+    <script src="./js/script.js" type="module"></script>
 </body>
 
 </html>

@@ -53,7 +53,7 @@ function renderToDoList(list, element, toDos, hidden) {
         }
 
         //childNodes[0] is the same as firstChild, so is this like inheritance?
-        checkbox = task.childNodes[0].choldNodes[0];
+        checkbox = task.childNodes[0].childNodes[0];
 
         if (checkbox) {
             checkbox.addEventListener('change', function () {

@@ -6,3 +6,7 @@ ul li {
     text-decoration: line-through;
     opacity: 0.5;
 }
+
+select::after {
+    content: "\25BC";
+}
