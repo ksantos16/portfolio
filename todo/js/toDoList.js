@@ -1,5 +1,5 @@
-import makeToDoTasks from "./utilities.js";
+import ToDo from "./utilities.js";
 
-const taskList = document.querySelector(".toDoList");
-const myTaskList = new makeToDoTasks(list, "todo");
+const taskList = document.getElementById("toDoList");
+const myTaskList = new ToDo(taskList, "todo");
 
