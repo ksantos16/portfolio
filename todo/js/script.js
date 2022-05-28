@@ -122,12 +122,10 @@ function getToDos() {
 
 
         const completedBtn = document.querySelector(".completed");
-        // completedBtn.classList.add("completed-btn");
-        // toDoDiv.appendChild(completedBtn);
+
 
         const removeBtn = document.querySelector(".removeBtn");
-        // removeBtn.classList.add("remove-btn");
-        // toDoDiv.appendChild(removeBtn);
+
 
         toDoList.appendChild(toDoDiv);
     });
