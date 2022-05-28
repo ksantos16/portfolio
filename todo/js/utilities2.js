@@ -8,9 +8,9 @@ const completeBtn = document.querySelector("#completeBtn");
 toDoButton.addEventListener("click", addToDo);
 toDoList.addEventListener("click", removeTask);
 toDoList.addEventListener("change", completedTask);
-allBtn.addEventListener("click", filterToDo);
-activeBtn.addEventListener("click", filterToDo);
-completeBtn.addEventListener("click", filterToDo);
+allBtn.addEventListener("click", allToDos);
+activeBtn.addEventListener("click", completedToDos);
+completeBtn.addEventListener("click", activeToDos);
 
 
 function addToDo(event) {
@@ -24,18 +24,13 @@ function addToDo(event) {
 
     newToDo.innerHTML = `<label><input type="checkbox" name="checked" class="completed">${toDoInput.value}</label>
                         <button class="removeBtn">X</button>`;
-    console.log(newToDo);
     newToDo.classList.add("todo-item");
     toDoDiv.appendChild(newToDo);
 
 
     const completedBtn = document.querySelector(".completed");
-    // completedBtn.classList.add("completed-btn");
-    // toDoDiv.appendChild(completedBtn);
 
     const removeBtn = document.querySelector(".removeBtn");
-    // removeBtn.classList.add("remove-btn");
-    // toDoDiv.appendChild(removeBtn);
 
     toDoList.appendChild(toDoDiv);
 
@@ -62,31 +57,37 @@ function completedTask(event) {
 
 }
 
-function filterToDo(event) {
+
+function allToDos() {
+    const todos = toDoList.childNodes;
+
+}
+
+function completedToDos(event) {
+    const todos = toDoList.childNodes;
+    const item = event.target;
+    //console.log(todos);
+
+    todos.forEach(function (todo) {
+        if (todo.classList[0] === "completed") {
+            todo.style.display = "block";
+
+        } else {
+            todo.style.display = "none";
+        }
+    });
+}
+
+function activeToDos(event) {
     const todos = toDoList.childNodes;
     //console.log(todos);
 
     todos.forEach(function (todo) {
-        switch (event.target.value) {
-            case "all":
-                todo.style.display = "block";
-                break;
-            case "complete":
-                if (todo.classList.contains("complete")) {
-                    todo.style.display = "block";
+        if (!todo.classList[0] === "completed") {
+            todo.style.display = "block";
 
-                } else {
-                    todo.style.display = "none";
-                }
-                break;
-            case "active":
-                if (!todo.classList.contains("complete")) {
-                    todo.style.display = "block";
-
-                } else {
-                    todo.style.display = "none";
-                }
-                break;
+        } else {
+            todo.style.display = "none";
         }
     });
 }
