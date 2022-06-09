@@ -1,0 +1,88 @@
+body {
+    max-width: 1000px;
+    margin: auto;
+}
+
+
+.ad-ad2:hover {
+    font-size: 30px;
+    color: #999999;
+    /* transform: translateX(40px); */
+    /* transform: scale(1.5, 0.25); */
+    /* transform: translateX(40px) scale(1.5); */
+    transform: rotate(10deg) translateX(40px) scale(1.5);
+    display: inline-block;
+}
+
+.ad-ad2 {
+    /* transition-property: transform;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+    transition-delay: 50ms; */
+    transition: transform 0.2s ease-out 50ms;
+}
+
+.target {
+    animation:
+        animationOne 300ms ease-in backwards,
+        animationTwo 600ms ease-out 1s forwards;
+}
+
+svg {
+    max-height: 250px;
+}
+
+.spin {
+    position: absolute;
+    top: 8px;
+    left: 55px;
+}
+
+.draganddrop .mc {
+    text-align: center;
+}
+
+/*For our bicycle, we want to translate it to the right while animating the sprite to make it seem as if the man is pedaling,
+using the steps() timing function to change the background image: */
+
+/* @keyframes bike {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: -360px 0;
+    }
+}
+
+@keyframes move {
+    0% {
+        transform: translateX(-100px);
+    }
+
+    100% {
+        transform: translateX(100px);
+    }
+}
+
+h1:after {
+    content: '';
+    width: 90px;
+    height: 92px;
+    background-image: url(../images/bike_sprite.png);
+    display: block;
+    margin: auto;
+    animation:
+        0.4s steps(4, end) infinite 50ms bike,
+        8s linear infinite 50ms move;
+    animation-play-state: paused;
+}
+
+h1:hover:after {
+    animation-play-state: running;
+} */
+
+.myCanvas,
+.demo {
+    border: dotted 2px black;
+}

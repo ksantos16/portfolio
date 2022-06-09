@@ -6,26 +6,208 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Week Eight Futher Function & AJAX</title>
+    <link rel="stylesheet" href="/week8/css/base.css">
 </head>
 
 <body>
     <h2>Week Eight - HTML & CSS3: Transfornations & Transitions, Canvas, SVG, and Drag & Drop</h2>
 
     <section>
-        <h3></h3>
+        <h3>Transform</h3>
 
         <h4>Notes:</h4>
 
         <p>
+            "transform" property allows you to translate, rotate, scale, and/or skew
+            any element on the page.
+        </p>
+        <p>
+            "translation" property allows you to move elements up and down or left and right along the x and y axes.
+        </p>
+        <p>
+            "scaled" element will grow outwards from or shrink inwards towards its center; in
+            other words, the element’s center will stay in the same place as its dimensions
+            change.
+        </p>
+        <p>
+            "rotate()"" function rotates an element around the point of origin by a specified
+            angle value. As with scale, by default the point of origin is the element’s center.angles are declared in
+            degrees, with positive degrees moving clockwise
+            and negative moving counterclockwise. In addition to degrees, values can be
+            provided in grads, radians, or turns,
+        </p>
+        <p>
+            The skew(x,y) function specifies a skew along the x and y axes. As you’d expect,
+            the x specifies the skew on the x axis, and the y specifies the skew on the y axis. If
+            the second parameter is omitted, the skew will only occur on the x axis
+        </p>
+        <p>
+            transforms are applied in the order given.
+        </p>
+        <p>
+            You can control the origin from which your transforms are applied. This is done using the transform-origin
+            property.
+        </p>
+        <h1>Put your <span class="ad-ad2">dukes</span> up, sire</h1>
 
+    </section>
+
+    <section>
+        <h3>Transitions</h3>
+
+        <h4>Notes:</h4>
+
+        <p>
+            Animation has certainly been possible for some time with JavaScript, but native
+            CSS transitions generally require less client-side processing, so they’ll usually appear
+            smoother. On mobile devices with limited computing power, this can be a lifesaver.
+        </p>
+
+        <p>Here are the steps to create a simple transition using only CSS:</p>
+        <ul>
+            <ol>Declare the original state of the element in the default style declaration.</ol>
+            <ol>Declare the final state of your transitioned element; for example, a :hover state.</ol>
+            <ol>Include the transition functions in your default style declaration using the
+                transition properties, including: transition-property, transition-duration,
+                transition-timing-function, and transition-delay. We’ll look at each of
+                these and how they work shortly.</ol>
+        </ul>
+
+        <p>
+            You can provide any number of CSS properties to the transition-property declaration,
+            separated by commas. Alternatively, you can use the keyword all to indicate
+            that every supported property should be animated as it transitions.
+        </p>
+        <p>
+            Note that the properties in the shorthand syntax can be in any order, however, if a
+            delay is included, you must also include a duration, and the duration must precede
+            the delay.
+        </p>
+        <p>
+            Let’s say instead of just transitioning the rotation, we transition the text’s color
+            property as well. We’d have to first include a color property in the transitioned
+            style declaration, and then either add the color property in the transition-property
+            value list, or use the key term all:<br>
+            transition-property: transform, color;
+        </p>
+
+    </section>
+
+    <section>
+        <h3>Animations</h3>
+
+        <h4>Notes:</h4>
+
+        <p>
+            A keyframe is a snapshot that defines a starting or end point of any smooth transition. With CSS
+            transitions, we’re essentially limited to defining a first and a last keyframe. CSS animations allow
+            us to add any number of keyframes in between, to guide our animation in more
+            complex ways.
+        </p>
+        <p>
+            If using the shorthand property, be careful with your animation-name. You want
+            to avoid accidentally using any animation property key term such as forwards,
+            running, or alternate. Those three key terms in particular have caused many
+            developers hours of debugging.
+        </p>
+
+        <span class="target"></span>
+
+    </section>
+
+
+    <section>
+        <h3>Canvas</h3>
+
+        <h4>Notes:</h4>
+
+        <p>
+            The canvas element takes both a width and height attribute, which must also be
+            set. The width and height attributes determine how large the canvas’s coordinate
+            system is. If we don’t specify width and height, the canvas element will default
+            to a width of 300 and a height of 150. If we set the width and height for a canvas
+            only in CSS, the canvas element will be 300 by 150, and the CSS properties will
+            simply determine how large the box is that displays the image.
+        </p>
+
+        <p>
+            In the canvas coordinate system, the top-left corner is (0,0). If the canvas is 200 pixels by 200
+            pixels, then the bottom-right corner is (200,200)
         </p>
 
 
+        <span class="target"></span>
+
+    </section>
+
+    <canvas id="myCanvas" class="myCanvas" width="200" height="200">
+        Sorry! Your browser doesn’t support Canvas.
+    </canvas>
+
+    <canvas id="demo1" class="demo" width="200" height="200">
+        Sorry! Your browser doesn’t support Canvas.
+    </canvas>
+
+    <canvas id="demo2" class="demo" width="200" height="200">
+        Sorry! Your browser doesn’t support Canvas.
+    </canvas>
+
+    <canvas id="demo3" class="demo" width="200" height="200">
+        Sorry! Your browser doesn’t support Canvas.
+    </canvas>
+
+    <section>
+        <h3>SVG</h3>
+
+        <h4>Notes:</h4>
+
+        <p>
+            SVG stands for Scalable Vector Graphics
+        </p>
+
+        <p>
+            Unlike canvas, images created with SVG are available via the DOM. This enables
+            technologies such as screen readers to see what’s present in an SVG object through
+            itsDOMnode, as well as allowing you to inspect SVG using your browser’s developer
+            tools.
+        </p>
+
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+            <circle cx="50" cy="50" r="25" fill="red" />
+        </svg>
+        <svg xmlns1="http://www.w3.org/2000/svg" viewbox="0 0 400 400">
+            <desc>Drawing a rectangle</desc>
+            <rect x="5" y="5" width="75" height="75" fill="blue" stroke="red" stroke-width="3" />
+        </svg>
+
+        <p>
+            One open source tool that you can use to make SVG images is Inkscape
+        </p>
+
+        <div class="spin" id="spinner"></div>
+
+    </section>
+
+    <section>
+        <h3>Drag & Drop</h3>
+
+        <h4>Notes:</h4>
+
+        <article id="ac3">
+            <h1>Wai-Aria? HAHA!</h1>
+            <h2 id="catHeading">Form Accessibility</h2>
+            <img src="../week8/images/cat.png" id="cat" alt="WAI-ARIA Cat">
+            <div class="content">
+                <p id="mouseContainer" class="mc">
+                    <img src="../week8/images/mouse.png" alt="mouse treat" id="mouse1" draggable="true">
+                    <img src="../week8/images/mouse.png" alt="mouse treat" id="mouse2" draggable="true">
+                    <img src="../week8/images/mouse.png" alt="mouse treat" id="mouse3" draggable="true">
+                </p>
     </section>
 
     <p><span id="date"></span></p>
 
-    <script src="/week7/js/main.js"></script>
+    <script src="/week8/js/main.js"></script>
 
 </body>
 
