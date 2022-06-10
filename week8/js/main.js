@@ -1,8 +1,8 @@
 //Canvas
-const canvas = document.getElementById("myCanvas");
+let canvas = document.getElementById("myCanvas");
 
 //Context is the place where your drawing is rendered.
-const context = canvas.getContext("2d");
+let context = canvas.getContext("2d");
 
 // "Paint Brush"
 context.strokeStyle = "red";
@@ -13,12 +13,12 @@ context.fillRect(10, 10, 100, 100);
 context.strokeRect(10, 10, 100, 100);
 
 //Repeating image in a background
-const canvas1 = document.getElementById("demo1");
-const context1 = canvas1.getContext("2d");
+let canvas1 = document.getElementById("demo1");
+let context1 = canvas1.getContext("2d");
 
 context1.strokeStyle = "red";
 
-const img = new Image();
+let img = new Image();
 img.src = "../week8/images/bg-bike.png";
 console.log(img);
 
@@ -33,10 +33,10 @@ img.onload = function () {
 
 
 //Doing a Gradient
-const canvas2 = document.getElementById("demo2");
-const context2 = canvas2.getContext("2d");
+let canvas2 = document.getElementById("demo2");
+let context2 = canvas2.getContext("2d");
 context2.strokeStyle = "red";
-const gradient = context2.createLinearGradient(0, 0, 0, 200);
+let gradient = context2.createLinearGradient(0, 0, 0, 200);
 gradient.addColorStop(0, "blue");
 gradient.addColorStop(1, "white");
 context2.fillStyle = gradient;
@@ -46,8 +46,8 @@ context2.strokeRect(10, 10, 100, 100);
 
 
 //Drawing a Circle
-const canvas3 = document.getElementById("demo3");
-const context3 = canvas3.getContext("2d");
+let canvas3 = document.getElementById("demo3");
+let context3 = canvas3.getContext("2d");
 context3.beginPath();
 context3.arc(100, 100, 50, 0, Math.PI * 2, true);
 context3.closePath();
