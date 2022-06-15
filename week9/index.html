@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week Eight Futher Function & AJAX</title>
+    <link rel="stylesheet" href="../week9/css/base.css">
+</head>
+
+<body>
+    <h2>Week Nine - JS: The Window Object and HTML5 APIs</h2>
+
+    <section>
+        <h3>The Browser History</h3>
+
+        <h4>Notes:</h4>
+
+        <p>
+            The window.history.length property shows how many pages have been visited
+            before arriving at the current page.
+        </p>
+        <p>
+            The window.history.go() method can be used to go to a specific page, where 0
+            is the current page:
+        </p>
+
+    </section>
+
+    <section>
+        <h3>Screen Information</h3>
+
+        <h4>Notes:</h4>
+
+        <p>
+            The Screen object has more uses for mobile devices. It also allows you to do things
+            like turn off the device's screen, detect a change in its orientation or lock it in a
+            specific orientation.
+        </p>
+
+        <p>
+            These practices have (thankfully) now been superseded by better practices, such as media queries
+            and feature detection, which is covered in the next chapter.
+        </p>
+
+    </section>
+
+    <section>
+        <h3>Timing Functions</h3>
+
+        <h4>Notes:</h4>
+
+        <p>
+            The window.setTimeout() method accepts a callback to a function as its first
+            parameter and a number of milliseconds as its second parameter.
+        </p>
+        <p>
+            The window.setInterval() method works in a similar way to
+            window.setTimeout(), except that it will repeatedly invoke the callback function
+            after every given number of milliseconds.
+        </p>
+        <p>
+            Be careful when using a method that uses the this keyword with either of these
+            timing methods. The binding of this is set to the window object, rather than the
+            method's object, so it can get some unexpected results
+        </p>
+        <p>
+
+        </p>
+
+        <div id='square'></div>
+
+    </section>
+
+    <section>
+        <h3></h3>
+
+        <h4>Notes:</h4>
+
+        <p>
+            The data- attribute is a way of embedding data in a web page using custom
+            attributes that are ignored by the browser.
+        </p>
+        <ul>The names of these attributes can be decided by the developer, but they must use
+            the following format:
+            <li>
+                Start with data-.
+            </li>
+            <li>
+                Contain only lowercase letters, numbers, hyphens, dots, colons or
+                underscores.
+            </li>
+            <li>
+                Include an optional string value.
+            </li>
+        </ul>
+
+        <p>
+            Examples could be:<br><br>
+            data-powers = 'flight superSpeed'<br>
+            data-rating = '5'<br>
+            data-dropdown<br>
+            data-user = 'DAZ'<br>
+            data-max-length = '32'<br>
+        </p>
+
+        <div id='hero' data-powers='flight superSpeed'>
+            Superman
+        </div>
+
+        <p>
+            To access the attribute, powers is used as
+            if it’s a property of the dataset object. If a data- attribute’s name contains
+            hyphens, they are replaced with camel-case notation, so data-max-length would
+            be accessed using dataset.maxLength.
+        </p>
+
+    </section>
+
+
+
+    <section>
+        <h3>LocalStorage</h3>
+
+        <h4>Notes:</h4>
+
+        <p>
+            The event object sent by the
+            event listener to the callback has a number of properties that provide information
+            about the updated item:
+        </p>
+        <ul>
+            <li>
+                key tells us the key of the item that changed
+            </li>
+            <li>
+                newValue tells us the new value to which it has been changed
+            </li>
+            <li>
+                oldValue tells us the previous value before it was changed
+            </li>
+            <li>
+                storageArea tells us if it is stored in local or session storage.
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h3>Geolocation</h3>
+
+        <h4>Notes:</h4>
+
+        <p>
+            The Geolocation API is used to obtain the geographical position of the device.
+            This means it can be used to find the user’s exact location, then link to nearby
+            places or measure the speed at which the user is moving.
+        </p>
+
+    </section>
+
+    <button id='rainbow'>Change Color</button>
+    <form>
+        <label for='number'>Enter a Number to Factorize:</label>
+        <input id='number' type='number' name='number' min=1 value='20'>
+        <button type='submit'>Submit</button>
+    </form>
+    <div id='output'></div>
+
+
+    <form>
+        <label for='message'>Enter a Message:</label>
+        <input type='text' name='message'>
+        <button type='submit'>Submit</button>
+    </form>
+    <div id='output2'></div>
+
+    <canvas id='canvas' width='400' height='400'></canvas>
+
+
+
+    <p><span id="date"></span></p>
+
+    <script src="../week9/js/main.js"></script>
+
+</body>
+
+</html>
