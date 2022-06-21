@@ -3,6 +3,8 @@
 
 function addSound(event) {
 
+    //keyCode is the code of the keys pressed on the keyboard
+
     const audio = document.querySelector(`audio[data-key="${event.keyCode}"]`);
 
     const key = document.querySelector(`div[data-key="${event.keyCode}"]`);
