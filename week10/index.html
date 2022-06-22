@@ -149,6 +149,69 @@
 
     </section>
 
+    <section>
+        <h3>Using Fetch API</h3>
+
+        <h4>Notes:</h4>
+
+        <h3>fetch () Parameters</h3>
+        <ul>
+            <li>resource: defines the resource that you wish to fetch. This can either be:</li>
+
+            <p>A string or any other object with a stringifier — including a URL object — that provides the URL of the
+                resource you want to fetch.</p>
+
+            <p>A Request object.</p>
+
+            <li>init: An object containing any custom settings that you want to apply to the request. The possible
+                options are:</li>
+
+            <li>method: The request method, e.g., GET, POST. Note that the Origin header is not set on Fetch requests
+                with a method of HEAD or GET.</li>
+
+            <li>headers: Any headers you want to add to your request, contained within a Headers object or an object
+                literal with String values.</li>
+
+            <li>body: Any body that you want to add to your request: this can be a Blob, an ArrayBuffer, a TypedArray, a
+                DataView, a FormData, a URLSearchParams, string object or literal, or a ReadableStream object. Note that
+                a request using the GET or HEAD method cannot have a body.</li>
+
+            <li>mode: The mode you want to use for the request, e.g., cors, no-cors, or same-origin.</li>
+
+            <li>Click<a href="https://developer.mozilla.org/en-US/docs/Web/API/fetch"> HERE </a></li>
+        </ul>
+
+        <h3>Origin</h3>
+
+        <ul>
+            <li>GET method requests a representation of the specified resource. Requests using GET should only be used
+                to request data (they shouldn't include data)</li>
+
+            <li>HEAD method requests the headers that would be returned if the HEAD request's URL was instead requested
+                with the HTTP GET method. For example, if a URL might produce a large download, a HEAD request could
+                read its Content-Length header to check the filesize without actually downloading the file.</li>
+
+            <li>POST method sends data to the server. The type of the body of the request is indicated by the
+                Content-Type header.</li>
+
+            <p>The difference between PUT and POST is that PUT is idempotent: calling it once or several times
+                successively has the same effect (that is no side effect), where successive identical POST may have
+                additional effects, like passing an order several times.</p>
+
+            <p>A POST request is typically sent via an HTML form and results in a change on the server.</p>
+
+            <li>Click<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin"> HERE </a></li>
+        </ul>
+
+    </section>
+
+    <section>
+        <h3>Question</h3>
+
+        <p>Why do some developers say its best to use async and await? When we would still have to use a .then to use
+            the promise</p>
+    </section>
+
     <p><span id="date"></span></p>
 
     <script src="../week10/js/main.js"></script>
