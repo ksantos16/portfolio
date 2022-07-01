@@ -63,6 +63,12 @@ const links = [
         url: 'https://ksantos16.github.io/portfolio/week10/index.html',
         team: 'Team Assignment',
         teamLink: 'https://ksantos16.github.io/portfolio/week10/team/quakes.html'
+    }, {
+        title: 'Week Eleven',
+        label: 'Week 11 Notes - N/A',
+        url: '',
+        team: 'Team Assignment',
+        teamLink: 'https://ksantos16.github.io/portfolio/week11/team/'
     }
 ]
 
