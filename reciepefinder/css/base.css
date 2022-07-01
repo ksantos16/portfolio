@@ -1,0 +1,50 @@
+:root {
+    --primary-color: #ffffff;
+    --secondary-color: #84dcc6;
+    --third-color: #a5ffd6;
+    --accent-color1: #ffa69e;
+    --accent-color2: #ff686b;
+    --font: 'Source Sans Pro', sans-serif;
+    ;
+}
+
+body {
+    font-family: var(--font);
+}
+
+h1 {
+    text-align: center;
+}
+
+.searchcontainer {
+    max-width: 960px;
+    margin: 0 auto;
+
+}
+
+form {
+    display: flex;
+    justify-content: center;
+}
+
+
+#ingredientSearch {
+    padding: .8rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.searchBtn {
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 0.59rem;
+    font-size: 1.6rem;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 9%;
+    margin-left: -5px;
+
+
+}

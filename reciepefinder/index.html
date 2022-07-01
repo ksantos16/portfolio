@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=PT+Serif&family=Source+Sans+Pro&family=Source+Serif+Pro:ital,wght@1,200&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../reciepefinder/css/base.css">
+    <title>Recipe Finder</title>
+</head>
+
+<body>
+    <h1>Recipe Finder</h1>
+    <div class="searchcontainer">
+        <form>
+
+            <input type="text" id="ingredientSearch" name="search" placeholder="Enter your ingredient...">
+
+            <button type="submit" class="searchBtn">
+                <i class="fa fa-search"></i>
+            </button>
+
+        </form>
+    </div>
+
+    <div class="meal-result">
+        <h2 class="title">Your Search Results:</h2>
+        <div id="meal"></div>
+    </div>
+
+    <div class="meal-details">
+        <button type="button" class="btn recipe-close-btn" id="recipe-close-btn">
+            <i class="fa fa-close"></i>
+        </button>
+        <button type="button" class="btn save-recipe-btn" id="save-recipe-btn">
+            <i class="fa fa-plus-circle"></i>
+        </button>
+
+        <div class="meal-details-content"></div>
+    </div>
+
+    <script src="../reciepefinder/js/main.js"></script>
+</body>
+
+</html>
