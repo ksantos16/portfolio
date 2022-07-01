@@ -16,35 +16,34 @@
 </head>
 
 <body>
-    <h1>Recipe Finder</h1>
-    <div class="searchcontainer">
-        <form>
+    <div class="container">
+        <h1>Recipe Finder</h1>
+        <div class="searchcontainer">
+            <form>
 
-            <input type="text" id="ingredientSearch" name="search" placeholder="Enter your ingredient...">
+                <input type="text" id="ingredientSearch" name="search" placeholder="Enter your ingredient...">
 
-            <button type="submit" class="searchBtn">
-                <i class="fa fa-search"></i>
+                <button type="submit" class="searchBtn">
+                    <i class="fa fa-search"></i>
+                </button>
+
+            </form>
+        </div>
+
+        <div class="meal-result">
+            <div id="meal"></div>
+        </div>
+
+        <div class="meal-details">
+            <button type="button" class="btn save-recipe-btn" id="save-recipe-btn">
+                <i class="fa fa-plus-circle"></i>
             </button>
-
-        </form>
+            <button type="button" class="btn recipe-close-btn" id="recipe-close-btn">
+                <i class="fa fa-close"></i>
+            </button>
+            <div class="meal-details-content"></div>
+        </div>
     </div>
-
-    <div class="meal-result">
-        <h2 class="title">Your Search Results:</h2>
-        <div id="meal"></div>
-    </div>
-
-    <div class="meal-details">
-        <button type="button" class="btn recipe-close-btn" id="recipe-close-btn">
-            <i class="fa fa-close"></i>
-        </button>
-        <button type="button" class="btn save-recipe-btn" id="save-recipe-btn">
-            <i class="fa fa-plus-circle"></i>
-        </button>
-
-        <div class="meal-details-content"></div>
-    </div>
-
     <script src="../reciepefinder/js/main.js"></script>
 </body>
 

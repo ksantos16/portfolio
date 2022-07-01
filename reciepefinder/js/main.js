@@ -28,6 +28,7 @@ function getRecipes(event) {
             if (data.meals) {
                 data.meals.forEach(meal => {
                     html += `
+                    <h2 class="title">Your Search Results:</h2>
                         <div class = "meal-item" data-id = "${meal.idMeal}">
                             <div class = "meal-img">
                                 <img src = "${meal.strMealThumb}" alt = "food">
@@ -51,6 +52,7 @@ function getRecipes(event) {
 
 function getMealRecipe(event) {
     event.preventDefault();
+
     if (event.target.classList.contains('recipe-btn')) {
         let mealItem = event.target.parentElement.parentElement;
         fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealItem.dataset.id}`)
@@ -80,4 +82,10 @@ function mealRecipeCard(meal) {
     `
     mealDetailsContent.innerHTML = recipe;
     mealDetailsContent.parentElement.classList.add('showRecipe');
+}
+
+function storeRecipe(event) {
+    if (condition) {
+        //pass
+    }
 }
