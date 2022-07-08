@@ -17,6 +17,9 @@
 
 <body>
     <div class="container">
+        <button type="button" class="favorite-btn">
+            <i class="fa fa-heart"></i>
+            Saved Recipes</button>
         <h1>Recipe Finder</h1>
         <div class="searchcontainer">
             <form>
@@ -30,21 +33,21 @@
             </form>
         </div>
 
+        <h2 class="title">Your Search Results:</h2>
+
         <div class="meal-result">
             <div id="meal"></div>
         </div>
 
         <div class="meal-details">
-            <button type="button" class="btn save-recipe-btn" id="save-recipe-btn">
-                <i class="fa fa-plus-circle"></i>
-            </button>
+
             <button type="button" class="btn recipe-close-btn" id="recipe-close-btn">
                 <i class="fa fa-close"></i>
             </button>
             <div class="meal-details-content"></div>
         </div>
     </div>
-    <script src="../reciepefinder/js/main.js"></script>
+    <script src="../reciepefinder/js/main.js" type="module"></script>
 </body>
 
 </html>

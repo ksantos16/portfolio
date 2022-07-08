@@ -1,3 +1,4 @@
+import { writeToLS } from "./storage.js";
 
 const searchBtn = document.querySelector(".searchBtn");
 const mealList = document.getElementById('meal');
@@ -28,7 +29,6 @@ function getRecipes(event) {
             if (data.meals) {
                 data.meals.forEach(meal => {
                     html += `
-                    <h2 class="title">Your Search Results:</h2>
                         <div class = "meal-item" data-id = "${meal.idMeal}">
                             <div class = "meal-img">
                                 <img src = "${meal.strMealThumb}" alt = "food">
@@ -36,6 +36,9 @@ function getRecipes(event) {
                             <div class = "meal-name">
                                 <h3>${meal.strMeal}</h3>
                                 <a href = "#" class = "recipe-btn">Get Recipe</a>
+                                <button type="button" class="btn save-recipe-btn" id="save-recipe-btn">
+                                <i class="fa fa-plus"></i>
+                            </button>
                             </div>
                         </div>
                     `;
@@ -61,9 +64,12 @@ function getMealRecipe(event) {
     }
 }
 
+
+
 function mealRecipeCard(meal) {
     console.log(meal);
     meal = meal[0];
+    // let id = meal.idMeal;
     let recipe = `
    <h2 class="title">${meal.strMeal}</h2>
    <p class="category">${meal.strCategory}</p>
@@ -81,11 +87,27 @@ function mealRecipeCard(meal) {
    </div>
     `
     mealDetailsContent.innerHTML = recipe;
+
+    // storeRecipe(meal);
+
     mealDetailsContent.parentElement.classList.add('showRecipe');
 }
 
-function storeRecipe(event) {
-    if (condition) {
-        //pass
-    }
-}
+let toDoList = null;
+
+function storeRecipe(event, data) {
+    if (event.target.classList.contains('save-recipe-btn')) {
+        const key = new Date();
+
+        let buildList = {
+            id: key,
+            content: data
+        }
+
+
+        toDoList.push(buildList);
+        writeToLS(key, toDoList);
+
+        console.log(toDoList);
+    };
+};

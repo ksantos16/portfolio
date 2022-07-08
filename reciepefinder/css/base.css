@@ -49,6 +49,170 @@ form {
 
 }
 
+.favorite-btn {
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 0.4rem;
+    font-size: 1.3rem;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: right;
+    position: absolute;
+    top: 2%;
+    right: 2%;
+
+}
+
+
+#meal {
+    margin: 4rem 0;
+}
+
+.meal-item {
+    border-radius: 1rem;
+
+    box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.79);
+    margin: 2rem 0;
+}
+
+.meal-img img {
+    width: 100%;
+    display: block;
+}
+
+
+
+.meal-details {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    background: var(--secondary-color);
+    border-radius: 1rem;
+    width: 90%;
+    height: 90%;
+    overflow-y: scroll;
+    display: none;
+    padding: 2rem 0;
+}
+
+.recipe-close-btn {
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+    font-size: 1.8rem;
+    background: #fff;
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.9;
+}
+
+.save-recipe-btn {
+
+    left: 2rem;
+    top: 2rem;
+    font-size: 1.8rem;
+    background: #fff;
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+
+    opacity: 0.9;
+}
+
 .showRecipe {
     display: block;
+}
+
+.meal-details-content {
+    text-align: center;
+}
+
+.title {
+    padding-top: 2rem;
+}
+
+.category {
+    background-color: #fff;
+    color: var(--secondary-color);
+    display: inline-block;
+    width: 15%;
+    padding: 0.3rem;
+    font-weight: bolder;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.recipe-instruct {
+    padding-left: 3rem;
+    padding-right: 3rem;
+    text-align: justify;
+}
+
+.recipe-instruct h3 {
+    text-align: center;
+}
+
+.recipe-meal-img img {
+    width: 450px;
+    height: 250px;
+    object-fit: cover;
+    margin: 0 auto;
+    display: block;
+}
+
+.recipe-link {
+    margin: 1.4rem 0;
+    text-align: center;
+}
+
+.recipe-link a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.3rem;
+    padding: .5rem;
+    background-color: var(--accent-color1);
+    border-radius: 1.3rem;
+}
+
+
+/* Media Queries */
+@media screen and (min-width: 600px) {
+    .searchcontainer {
+        width: 540px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    #meal {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    .meal-item {
+        margin: 0;
+    }
+
+    .meal-details {
+        width: 700px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    #meal {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
