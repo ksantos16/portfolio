@@ -125,8 +125,8 @@ function getSaveRecipes(event) {
         .then(data => {
             console.log(data);
             let html = "";
-            if (data.savedMeals) {
-                data.savedMeals.forEach(meal => {
+            if (data.meals) {
+                data.meals.forEach(meal => {
                     html += `
                     <div class = "meal-item" data-id = "${meal.idMeal}">
                         <div class = "meal-img">
