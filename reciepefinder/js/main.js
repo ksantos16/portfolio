@@ -1,17 +1,18 @@
-import { writeToLS } from "./storage.js";
+import { writeToLS, readFromLS } from "./storage.js";
 
 const searchBtn = document.querySelector(".searchBtn");
 const mealList = document.getElementById('meal');
 const mealDetailsContent = document.querySelector('.meal-details-content');
 const recipeCloseBtn = document.getElementById('recipe-close-btn');
-const saveRecipeBtn = document.getElementById('save-recipe-btn');
+const savedRecipes = document.querySelector(".favorite-btn");
+
 
 searchBtn.addEventListener("click", getRecipes);
 mealList.addEventListener('click', getMealRecipe);
 recipeCloseBtn.addEventListener('click', () => {
     mealDetailsContent.parentElement.classList.remove('showRecipe');
 })
-saveRecipeBtn.addEventListener("click", storeRecipe);
+savedRecipes.addEventListener("click", getSaveRecipes)
 
 
 
@@ -50,8 +51,16 @@ function getRecipes(event) {
             }
 
             mealList.innerHTML = html;
+
+            const saveRecipeBtn = document.querySelectorAll('#save-recipe-btn');
+            saveRecipeBtn.forEach(btn => {
+                btn.addEventListener('click', storeRecipe);
+            });
+
+
         });
 }
+
 
 function getMealRecipe(event) {
     event.preventDefault();
@@ -88,26 +97,57 @@ function mealRecipeCard(meal) {
     `
     mealDetailsContent.innerHTML = recipe;
 
-    // storeRecipe(meal);
-
     mealDetailsContent.parentElement.classList.add('showRecipe');
 }
 
-let toDoList = null;
+let recipeList = [];
 
-function storeRecipe(event, data) {
-    if (event.target.classList.contains('save-recipe-btn')) {
-        const key = new Date();
+function storeRecipe(event) {
 
-        let buildList = {
-            id: key,
-            content: data
-        }
-
-
-        toDoList.push(buildList);
-        writeToLS(key, toDoList);
-
-        console.log(toDoList);
+    let buildList = {
+        mealId: event.target.parentElement.parentElement.parentElement.getAttribute('data-id'),
     };
+
+    recipeList.push(buildList);
+    writeToLS("recipe", recipeList);
+
+    console.log(recipeList);
+
 };
+
+function getSaveRecipes(event) {
+    event.preventDefault();
+    let recipeList = readFromLS("recipe");
+    console.log(recipeList);
+    console.log(recipeList[0]);
+    fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${recipeList[0]}`)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            let html = "";
+            if (data.savedMeals) {
+                data.savedMeals.forEach(meal => {
+                    html += `
+                    <div class = "meal-item" data-id = "${meal.idMeal}">
+                        <div class = "meal-img">
+                            <img src = "${meal.strMealThumb}" alt = "food">
+                        </div>
+                        <div class = "meal-name">
+                            <h3>${meal.strMeal}</h3>
+                            <a href = "#" class = "recipe-btn">Get Recipe</a>
+                            <button type="button" class="btn save-recipe-btn" id="save-recipe-btn">
+                            <i class="fa fa-plus"></i>
+                        </button>
+                        </div>
+                    </div>
+                `;
+                });
+            }
+
+            mealList.innerHTML = html;
+        }
+        )
+}
+
+
+
