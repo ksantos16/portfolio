@@ -69,6 +69,12 @@ const links = [
         url: '',
         team: 'Team Assignment',
         teamLink: 'https://ksantos16.github.io/portfolio/week11/index.html'
+    }, {
+        title: 'Week Fourteen',
+        label: 'Challenge 2 - Recipe Finder App',
+        url: 'https://ksantos16.github.io/portfolio/reciepefinder/index.html',
+        team: 'Team Assignment - N/A',
+        teamLink: ''
     }
 ]
 
