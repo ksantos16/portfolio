@@ -17,7 +17,7 @@ body {
     position: relative;
     margin: 0 auto;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    padding: 1rem;
+    padding: 3rem;
 }
 
 h1 {
@@ -107,14 +107,14 @@ h3 {
 .recipe-btn {
     text-decoration: none;
     text-align: center;
-    background-color: var(--third-color);
+    background-color: var(--accent-color2);
     color: #fff;
-    font-weight: bold;
+    font-weight: 500;
     padding: .3rem;
     border-radius: 20px;
     margin: .5rem;
-    justify-self: center;
-    text-align: center;
+    font-size: 12px;
+    outline: 2rem black;
 }
 
 .save-recipe-btn {
@@ -260,6 +260,11 @@ h3 {
 
     h3 {
         font-size: 1.3rem;
+    }
+
+    .recipe-btn {
+        padding: .3rem;
+        font-size: 1rem;
     }
 
     .category {
