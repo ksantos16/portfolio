@@ -118,16 +118,19 @@ function storeRecipe(event) {
 function getSaveRecipes(event) {
     event.preventDefault();
     let recipeList = readFromLS("recipe");
+
     console.log(recipeList);
     console.log(recipeList[0]);
-    fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${recipeList[0]}`)
-        .then(response => response.json())
-        .then(data => {
-            console.log(data);
-            let html = "";
-            if (data.meals) {
-                data.meals.forEach(meal => {
-                    html += `
+
+    recipeList.forEach(recipe => {
+        fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${recipe.mealId}`)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                let html = "";
+                if (data.meals) {
+                    data.meals.forEach(meal => {
+                        html += `
                     <div class = "meal-item" data-id = "${meal.idMeal}">
                         <div class = "meal-img">
                             <img src = "${meal.strMealThumb}" alt = "food">
@@ -135,18 +138,18 @@ function getSaveRecipes(event) {
                         <div class = "meal-name">
                             <h3>${meal.strMeal}</h3>
                             <a href = "#" class = "recipe-btn">Get Recipe</a>
-                            <button type="button" class="btn save-recipe-btn" id="save-recipe-btn">
-                            <i class="fa fa-plus"></i>
-                        </button>
                         </div>
                     </div>
                 `;
-                });
-            }
+                    });
+                }
 
-            mealList.innerHTML = html;
-        }
-        )
+                mealList.innerHTML = html;
+            }
+            )
+
+    });
+
 }
 
 
