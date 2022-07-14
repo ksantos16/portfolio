@@ -20,7 +20,7 @@ const links = [
         label: 'Week 3 Notes',
         url: 'https://ksantos16.github.io/portfolio/week3/index.html',
         team: 'Team Assignment',
-        teamLink: 'https://ksantos16.github.io/portfolio/week2/team/week3_team.html'
+        teamLink: 'https://ksantos16.github.io/portfolio/week3/team/week3_team.html'
     }, {
         title: 'Week Four',
         label: 'Week 4 Notes',
@@ -38,7 +38,7 @@ const links = [
         label: 'To Do Challenge',
         url: 'https://ksantos16.github.io/portfolio/todo/index.html',
         team: 'No Team Assignment',
-        teamLink: 'https://ksantos16.github.io/portfolio/index.html'
+        teamLink: 
     }, {
         title: 'Week Seven',
         label: 'Week 7 Notes',
