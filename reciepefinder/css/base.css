@@ -126,6 +126,10 @@ h3 {
     text-align: center;
 }
 
+.save-recipe-btn:hover {
+    color: var(--third-color);
+}
+
 .meal-details {
     position: fixed;
     top: 50%;
