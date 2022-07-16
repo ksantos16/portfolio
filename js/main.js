@@ -38,7 +38,7 @@ const links = [
         label: 'To Do Challenge',
         url: 'https://ksantos16.github.io/portfolio/todo/index.html',
         team: 'No Team Assignment',
-        teamLink: 
+        teamLink: ``
     }, {
         title: 'Week Seven',
         label: 'Week 7 Notes',
