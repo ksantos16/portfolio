@@ -7,7 +7,7 @@ const links = [
         label: 'Week 1 Notes',
         url: 'https://ksantos16.github.io/portfolio/week1/index.html',
         team: 'Team Assignment',
-        teamLink: 'None'
+        teamLink: 'https://ksantos16.github.io/portfolio/index.html'
 
     }, {
         title: 'Week Two',
@@ -38,7 +38,7 @@ const links = [
         label: 'To Do Challenge',
         url: 'https://ksantos16.github.io/portfolio/todo/index.html',
         team: 'No Team Assignment',
-        teamLink: 'None'
+        teamLink: 'https://ksantos16.github.io/portfolio/index.html'
     }, {
         title: 'Week Seven',
         label: 'Week 7 Notes',
@@ -66,7 +66,7 @@ const links = [
     }, {
         title: 'Week Eleven',
         label: 'Week 11 Notes - N/A',
-        url: '',
+        url: 'https://ksantos16.github.io/portfolio/index.html',
         team: 'Team Assignment',
         teamLink: 'https://ksantos16.github.io/portfolio/week11/client/week11.html'
     }, {
@@ -74,7 +74,7 @@ const links = [
         label: 'Challenge 2 - Recipe Finder App',
         url: 'https://ksantos16.github.io/portfolio/reciepefinder/index.html',
         team: 'Team Assignment - N/A',
-        teamLink: 'None'
+        teamLink: 'https://ksantos16.github.io/portfolio/index.html'
     }
 ]
 
